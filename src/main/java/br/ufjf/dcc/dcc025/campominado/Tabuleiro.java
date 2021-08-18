@@ -46,7 +46,8 @@ public class Tabuleiro extends JFrame{
                 casa.setLinha(i);
                 casa.setColuna(j);
                 
-                casa.addActionListener(new Jogar(campo));
+//                casa.addActionListener(new Jogar(campo));
+                casa.addMouseListener(new Jogar(campo));
                 
                 casa.setPreferredSize(new Dimension(50, 50));
                 casa.setBorder(BorderFactory.createLineBorder(Color.black));
