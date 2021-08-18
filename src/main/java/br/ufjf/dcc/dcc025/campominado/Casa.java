@@ -14,6 +14,8 @@ import javax.swing.JButton;
 public class Casa extends JButton{
 
     private boolean bomba;
+    private int linha;
+    private int coluna;
     
     public Casa(boolean bomba) {
         this.bomba = bomba;
@@ -26,5 +28,21 @@ public class Casa extends JButton{
     public void setBomba(boolean bomba) {
         this.bomba = bomba;
     }
-    
+
+    public int getLinha() {
+        return linha;
+    }
+
+    public void setLinha(int linha) {
+        this.linha = linha;
+    }
+
+    public int getColuna() {
+        return coluna;
+    }
+
+    public void setColuna(int coluna) {
+        this.coluna = coluna;
+    }
+
 }

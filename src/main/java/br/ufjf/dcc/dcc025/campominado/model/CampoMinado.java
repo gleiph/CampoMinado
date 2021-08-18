@@ -88,6 +88,13 @@ public class CampoMinado {
 
         return contadorBombas;
     }
+    
+    public boolean isBomba(int x, int y){
+        if(campo[x][y] == 1)
+            return true;
+        else
+            return false;
+    }
 
     public static void main(String[] args) {
         CampoMinado c = new CampoMinado(10, 50);
