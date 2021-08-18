@@ -7,6 +7,7 @@ package br.ufjf.dcc.dcc025.campominado.controller;
 
 import br.ufjf.dcc.dcc025.campominado.Casa;
 import br.ufjf.dcc.dcc025.campominado.model.CampoMinado;
+import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
@@ -31,11 +32,16 @@ public class Jogar implements MouseListener {
 
         if (SwingUtilities.isRightMouseButton(me)) {
             casa.setText("F");
+            casa.setForeground(Color.BLUE);
         } else if (campo.isBomba(casa.getLinha(), casa.getColuna())) {
             casa.setText("B");
+            casa.setForeground(Color.RED);
+
             JOptionPane.showMessageDialog(null, "Você perdeu!");
         } else {
             casa.setText("" + campo.bombasRedor(casa.getLinha(), casa.getColuna()));
+            casa.setForeground(Color.BLACK);
+
         }
     }
 
