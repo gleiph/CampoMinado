@@ -70,8 +70,10 @@ public class Tabuleiro extends JFrame{
         for (Component component : painel.getComponents()) {
             if(component instanceof Casa){
                 Casa casa = (Casa) component;
-                if(casa.isBomba())
+                if(casa.isBomba()){
                     casa.setIcon(icon);
+                    casa.setText("");
+                }
             }
         }
     }
