@@ -96,16 +96,16 @@ public class CampoMinado {
             return false;
     }
 
-    public static void main(String[] args) {
-        CampoMinado c = new CampoMinado(10, 50);
-        System.out.println("Campo inicial");
-        c.imprimeCampo();
-        System.out.println("Sorteio");
-        c.inicia();
-        System.out.println("Campo final");
-        c.imprimeCampo();
-        System.out.println("Campo final(Contador bombas)");
-        c.imprimeCampoBombas();
-    }
+//    public static void main(String[] args) {
+//        CampoMinado c = new CampoMinado(10, 50);
+//        System.out.println("Campo inicial");
+//        c.imprimeCampo();
+//        System.out.println("Sorteio");
+//        c.inicia();
+//        System.out.println("Campo final");
+//        c.imprimeCampo();
+//        System.out.println("Campo final(Contador bombas)");
+//        c.imprimeCampoBombas();
+//    }
     
 }
