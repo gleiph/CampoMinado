@@ -70,7 +70,7 @@ public class Jogar implements MouseListener {
 
         } else if (!casa.getText().equals("F")) {
             if (campo.isBomba(casa.getLinha(), casa.getColuna())) {
-                ImageIcon bomb = new ImageIcon("images\\bomb.png");
+                ImageIcon bomb = new ImageIcon("images"+File.separator+"bomb.png");
                 Image resizedImage = getScaledImage(bomb.getImage(), casa.getWidth() - 1, casa.getHeight() - 1);
                 bomb.setImage(resizedImage);
                 casa.setText("");
