@@ -22,8 +22,8 @@ import javax.swing.JPanel;
  */
 public class Tabuleiro extends JFrame{
     
-    public static final int ORDEM = 10;
-    public static final int BOMBAS = 20;
+    public static final int ORDEM = 3;
+    public static final int BOMBAS = 2;
     
     private JPanel painel;
     private CampoMinado campo;

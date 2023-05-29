@@ -30,6 +30,7 @@ public class Jogar implements MouseListener {
     private final CampoMinado campo;
     private final Tabuleiro tabuleiro;
 
+
     public Jogar(CampoMinado campo, Tabuleiro tabuleiro) {
         this.campo = campo;
         this.tabuleiro = tabuleiro;
@@ -57,14 +58,7 @@ public class Jogar implements MouseListener {
                 casa.setForeground(Color.BLUE);
                 casa.setIcon(null);
             } else if (casa.getText().equals("F")) {
-                casa.setText("B");
-//                casa.setIcon(bomb);
-//                System.out.println(new File("images\\bomb.png"));
-                casa.setForeground(Color.RED);
-            }else if (casa.getText().equals("B")) {
                 casa.setText("");
-//                casa.setIcon(bomb);
-//                System.out.println(new File("images\\bomb.png"));
                 casa.setForeground(Color.RED);
             }
 
@@ -82,6 +76,14 @@ public class Jogar implements MouseListener {
             } else {
                 casa.setText("" + campo.bombasRedor(casa.getLinha(), casa.getColuna()));
                 casa.setForeground(Color.BLACK);
+                try {
+                    campo.marcarPosicao(casa.getLinha(), casa.getColuna());
+                } catch (Exception e) {
+                    JOptionPane.showMessageDialog(tabuleiro, "Você perdeu!");
+                }
+
+                if(campo.venceu())
+                    JOptionPane.showMessageDialog(tabuleiro, "Você venceu!");
 
             }
         }

@@ -10,6 +10,10 @@ public class CampoMinado {
     private final int ordem;
     private final int bombas;
 
+    private final int BOMBA = 1;
+    private final int VAZIO = 0;
+    private final int MARCADO = 2;
+
     public CampoMinado(int ordem, int bombas) {
         this.campo = new int[ordem][ordem];
         this.ordem = ordem;
@@ -21,7 +25,7 @@ public class CampoMinado {
 
         for (int i = 0; i < ordem; i++) {
             for (int j = 0; j < ordem; j++) {
-                campo[i][j] = 0;
+                campo[i][j] = VAZIO;
             }
         }
 
@@ -33,7 +37,7 @@ public class CampoMinado {
             y = (int) (Math.random() * this.ordem);
 
             if (campo[x][y] == 0) {
-                campo[x][y] = 1;
+                campo[x][y] = BOMBA;
                 contadorBombas++;
             }
         }
@@ -66,7 +70,7 @@ public class CampoMinado {
 
     private int valorCampo(int x, int y) {
         try {
-            return this.campo[x][y];
+            return this.campo[x][y]==1?1:0;
         } catch (IndexOutOfBoundsException e) {
             return 0;
         }
@@ -94,6 +98,24 @@ public class CampoMinado {
             return true;
         else
             return false;
+    }
+
+    public boolean venceu(){
+        for (int i = 0; i < ordem; i++) {
+            for (int j = 0; j < ordem; j++) {
+                if(campo[i][j] == VAZIO)
+                    return false;
+            }
+        }
+        return true;
+    }
+
+    public void marcarPosicao(int x, int y) throws Exception {
+        if(isBomba(x, y))
+            throw  new Exception("Posição possui bomba!");
+
+        campo[x][y] = MARCADO;
+
     }
 
     
